@@ -100,6 +100,34 @@ class LinkedList{
         }
     }
 
+    // remove from a index
+
+ removeAt(index){
+        // if index is out of range
+        if(index > 0 && index> this.size){
+            return;
+        }
+        let current = this.head;
+        let previous;
+        let count = 0;
+        
+        if(index==0){
+            this.head = current.next
+        }else{
+            while(count < index){
+                count++;
+                previous = current
+                current = current.next;
+            }
+            previous.next = current.next;
+        }
+        this.size--;
+    }
+
+    clearList(){
+        this.head = null;
+        this.size = 0;
+    }
 
 }
 
@@ -115,6 +143,14 @@ tst.insertLast(400)
 tst.insertAt(33,3)
 tst.getAt(3)
 
+
+
+
+while(tst.head.data >= tst.next){
+    console.log("ahs;dfj")
+    break;
+}
+console.log("alsdfjalsdf",tst.next.data, tst.head.data)
 tst.printlistData()
 
 
